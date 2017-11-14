@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>2016年会抽奖</title>
+	<script src="js/jquery-1.12.0.min.js"></script>
+	<script src="js/arc.js"></script>
+		<style>
+			*{ font-family: "微软雅黑";}
+			p{ margin: 0; padding: 0;}
+			body{background:url(images/bg03.png) #000 ; color: #fff; width: 100%; height: 100%; overflow: hidden; margin: 0 auto;}
+			.fl{ float: left;},.fr{ float: right;}.cl{ clear: both;}
+			.transition{ transition: all 0.4s; -moz-transition: all 0.4s; -webkit-transition: all 0.4s;}
+			.relative{position: relative;}
+			.absolute{ position: absolute;}					
+			#num200{ visibility: hidden; font-size: 0;}
+			
+			.wrap{ width: 800px; margin: 480px auto 0;}
+			.ml20{ margin-left: 20px;}.ml80{ margin-left: 80px;}.m0-15{ margin: 0 15px;}.mt30{ margin-top: 50px;}
+			.title{ font-size: 30px; margin: 60px 0 0;}
+			.fb{ font-weight: bold;}.fn{ font-weight: normal;}
+			.org{ color: #ff0;}.font20{ font-size: 20px;}.font50{ font-size: 50px;}
+			.but{ border-radius: 18px; }
+			.button_on{ background: #fc0; color: #860000; width: 300px; border: 0; cursor: pointer; display: inline-block; padding: 20px 0;outline: none;}
+			.button_off{background: #000; color: #fff; width: 300px; border: 0; cursor: pointer; display: inline-block; padding: 20px 0;outline: none;}
+			.img{ width: 250px; height: 281px; display: block;}
+			.img img{ width: 250px; height: 281px; border-radius: 50%;}
+		</style>
+		<script>
+			$(document).ready(function(){	
+				//读取位置
+  				//$('#num200').load('num200.txt');
+  				searchluck();
+  				
+				$(document).keyup(function(event){
+				if(event.keyCode == 32){
+					luck();
+				}				
+				//console.log(event.keyCode);//获取键盘码
+				});
+			});
+			
+		</script>
+	</head>
+	<body>
+		<audio autoplay="" loop="" src="images/luck.mp3">您的浏览器不支持 audio 标签</audio>
+		<div id="num200"></div>
+		<div id="main" class="wrap">			
+			<div class="fl img"><span id="img" class="transition"><img src="images/luck.png"></span></div>
+			<div class="fl ml80">				
+				<p class="title mb30">恭喜<b class="m0-15 font50 org" id="title">猜猜我是谁</b>中奖了！</p>				
+				<button type="button" onclick="luck()" id="button" class="but button_on fb font20 mt30" title="开始抽奖">开始抽奖</button>
+			</div>
+			<div class="cl"></div>
+		</div>		
+	</body>
+</html>
